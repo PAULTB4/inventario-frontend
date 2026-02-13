@@ -16,14 +16,14 @@ export default function App() {
       return;
     }
 
-    // Validación simple de extensión (opcional)
+    // Validación simple de extensión
     if (!file.name.toLowerCase().endsWith(".xlsx")) {
       setError("El archivo debe ser .xlsx");
       return;
     }
 
     const formData = new FormData();
-    formData.append("file", file); // IMPORTANTE: "file" igual que en Nest
+    formData.append("file", file); 
 
     try {
       setLoading(true);
