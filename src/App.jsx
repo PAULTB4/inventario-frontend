@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 export default function App() {
   const [file, setFile] = useState(null);
@@ -49,11 +50,11 @@ export default function App() {
   };
 
   return (
-    <div style={{ maxWidth: 800, margin: "40px auto", fontFamily: "Arial, sans-serif" }}>
+    <div className="app-container">
       <h2>Carga de Inventario</h2>
       <p>Sube un archivo Excel (.xlsx) para insertar/actualizar productos por SKU.</p>
 
-      <form onSubmit={onSubmit} style={{ display: "flex", gap: 10, alignItems: "center" }}>
+      <form onSubmit={onSubmit} className="upload-form">
         <input
           type="file"
           accept=".xlsx"
@@ -65,15 +66,15 @@ export default function App() {
       </form>
 
       {error && (
-        <p style={{ marginTop: 16 }}>
+        <p className="feedback">
           <b>Error:</b> {error}
         </p>
       )}
 
       {respuesta && (
-        <div style={{ marginTop: 20 }}>
+        <div className="report-wrapper">
           <h3>Reporte</h3>
-          <pre style={{ padding: 12, border: "1px solid #ccc", borderRadius: 6 }}>
+          <pre className="report-pre">
             {JSON.stringify(respuesta, null, 2)}
           </pre>
         </div>

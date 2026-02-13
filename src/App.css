@@ -1,42 +1,63 @@
-#root {
-  max-width: 1280px;
+.app-container {
+  width: min(820px, 100%);
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 32px 16px;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-container h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+  line-height: 1.2;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-container p {
+  margin: 0 0 18px;
+  font-size: clamp(1rem, 2.4vw, 1.1rem);
+}
+
+.upload-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.upload-form input[type="file"] {
+  max-width: 100%;
+  flex: 1 1 320px;
+}
+
+.upload-form button {
+  white-space: nowrap;
+}
+
+.feedback {
+  margin-top: 16px;
+}
+
+.report-wrapper {
+  margin-top: 20px;
+}
+
+.report-pre {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 24px 14px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .upload-form {
+    align-items: stretch;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .upload-form button {
+    width: 100%;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
